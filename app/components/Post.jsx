@@ -160,7 +160,7 @@ const Post = ({ post }) => {
               required
             />
 
-            <input
+            {/* <input
               type="text"
               placeholder="Price"
               name="price"
@@ -168,15 +168,19 @@ const Post = ({ post }) => {
               value={postToEdit.price || value1}
               onChange={handleChange}
               required
-            />
+            /> */}
 
 
 
 <select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
 <option value="0" selected>--Choose Category--</option>
-              <option value="Food">Food</option>
-              <option value="Drink">Drink</option>
-              <option value="Donishka Mart">Donishka Mart</option> 
+              <option value="Birthday boy cake">Birthday boy cake</option>
+              <option value="Birthday girl cake">Birthday girl cake</option>
+              <option value="Baptism cake">Baptism cake</option> 
+              <option value="Communion cake">Communion cake</option> 
+              <option value="Event birthday">Event birthday</option> 
+              <option value="Event baptism">Event baptism</option> 
+              <option value="Event wedding">Event wedding</option> 
             </select>
 
             <br />
@@ -185,7 +189,7 @@ const Post = ({ post }) => {
  
 
             <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
-            <p style={{color:'red'}}>Note: images should be no more 1MB and size of 1200 * 720 px</p>
+            <p style={{color:'red'}}>Note: images should be no more 1MB and size of 600 * 600 px</p>
 
             <button type="submit" className="px-5 py-2 mt-3" style={{ background: "#c01907" }} disabled={active}>
               Submit

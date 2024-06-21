@@ -27,16 +27,44 @@ export default function Home() {
   };
 
   return (
-     
+    // <main className="container" style={{textAlign:"center"}}>
+    //   <h4>Login Page</h4>
+
+    //   <form onSubmit={handleSubmit} className="flex flex-col gap-4" style={{display: "inline-flex"}}>
+    //     <div>
+    //       <label htmlFor="username">Username:</label>
+    //       <input
+    //         type="text"
+    //         id="username"
+    //         name="username"
+    //         required
+    //         className="border rounded border-black"
+    //       />
+    //     </div>
+    //     <div>
+    //       <label htmlFor="password">Password:</label>
+    //       <input
+    //         type="password"
+    //         id="password"
+    //         name="password"
+    //         required
+    //         className="border rounded border-black"
+    //       />
+    //     </div>
+
+    //     <button
+    //       type="submit"
+    //       className="p-2 text-white w-fit rounded"
+    //       style={{background:"#ab695d"}}
+    //     >
+    //       Submit
+    //     </button>
+    //   </form>
+    // </main>
+
 
     <>
       <>
-      <style
-  dangerouslySetInnerHTML={{
-    __html: "\n  body{\n    background:black;\n color:white;  }\n"
-  }}
-/>
-
         {/* TW Elements is free under AGPL, with commercial license required for specific uses. See more details: https://tw-elements.com/license/ and contact us for queries at tailwind@mdbootstrap.com */}
         <section className="h-screen container">
           <div className="h-full">
@@ -44,7 +72,7 @@ export default function Home() {
             <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
               <div className="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12" id="contentMob">
                 <img
-                  src="https://ucarecdn.com/6c1db2f0-a838-418d-9cfa-d83c7dc8b111/8a91d52bc39e4172ad2f0d86cc6948c1.jpg"
+                  src="https://ucarecdn.com/57480946-f9f3-48c3-a7ec-750eb84b5d3a/maisonsibonlogo1551457782.png"
                   className="w-50"
                   alt="Sample image"
                 />
@@ -95,7 +123,7 @@ export default function Home() {
                     <button
                       type="submit"
                       className="inline-block rounded  px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                      style={{ background: "#c01907" }}
+                      style={{ background: "#ab695d" }}
                     >
                       Login
                     </button>

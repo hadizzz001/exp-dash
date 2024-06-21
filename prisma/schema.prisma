@@ -15,7 +15,6 @@ model Post {
   title String
   description String
   img String[]
-  price String
   category String 
 }
 

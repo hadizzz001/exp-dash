@@ -707,6 +707,10 @@ video {
 .w-8 {
   width: 2rem;
 }
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 .w-full {
   width: 100%;
 }
@@ -788,6 +792,10 @@ video {
 }
 .border-0 {
   border-width: 0px;
+}
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 .border-neutral-200 {
   --tw-border-opacity: 1;
