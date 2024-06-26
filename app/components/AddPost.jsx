@@ -172,6 +172,7 @@ const AddPost = () => {
               <option value="Birthday girl cake">Birthday girl cake</option>
               <option value="Baptism cake">Baptism cake</option> 
               <option value="Communion cake">Communion cake</option> 
+              <option value="Ice cream">Ice cream</option> 
               <option value="Event birthday">Event birthday</option> 
               <option value="Event baptism">Event baptism</option> 
               <option value="Event wedding">Event wedding</option> 
