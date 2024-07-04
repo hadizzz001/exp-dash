@@ -18,6 +18,11 @@ model Post {
   category String 
 }
 
+model Banner {
+  id String @id @default(auto()) @map("_id") @db.ObjectId 
+  img String[] 
+}
+
 
 
 

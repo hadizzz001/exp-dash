@@ -1,6 +1,6 @@
 "use client"
 
-import AddPost from './../components/AddPost'
+import AddPost from './../components/AddPost' 
 import PostList from './../components/PostList' 
 import { fetchTemp } from './../utils'
 import { useState, useEffect } from "react";
@@ -26,7 +26,7 @@ const dashboard = () => {
       <div className='my-5 flex flex-col gap-4'>
         <h1 className='text-3xl font-bold'>Admin Dashbaord</h1>
 
-        <AddPost />
+        <AddPost /> 
       </div>  
       {
       allTemp && allTemp?.length > 0 ? (

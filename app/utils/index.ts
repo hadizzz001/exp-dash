@@ -30,3 +30,9 @@ export async function fetchTemp3(id:any) {
 }
 
 
+
+export async function fetchTemp4() { 
+    const response = await fetch('/api/banner', { next: { revalidate: 0 } });
+    const result = await response.json();  
+    return result.posts; 
+}

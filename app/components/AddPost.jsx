@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Modal from "./Modal";
 import axios from "axios";
-import { useRouter } from 'next/navigation' 
+import { useRouter } from 'next/navigation'
 import Dropzone from './Dropzone'
 
 
@@ -12,40 +12,40 @@ const AddPost = () => {
 
   const router = useRouter();
   const { push } = useRouter();
-  const [modalOpen, setModalOpen] = useState(false); 
-  const [inputs, setInputs] = useState({}); 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [inputs, setInputs] = useState({});
   const [active, setActive] = useState(false)
-  const [firstSelectValue, setFirstSelectValue] = useState(''); 
-  const [value1, setValue1] = useState('');  
+  const [firstSelectValue, setFirstSelectValue] = useState('');
+  const [value1, setValue1] = useState('');
   const [imgs, setImgs] = useState([''])
- 
 
 
- 
-
- 
- 
 
 
- 
+
+
+
+
+
+
 
 
   useEffect(() => {
     setInputs((prevState) => ({ ...prevState, category: "" + firstSelectValue, img: imgs }));
-  }, [firstSelectValue, imgs ])
+  }, [firstSelectValue, imgs])
 
 
-   
- 
 
- 
+
+
+
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
 
     if (e.target.category.value == "0") {
       alert("Please select a category");
-    } 
+    }
     else if (imgs.includes("")) {
       alert("Please select item image");
     }
@@ -61,7 +61,7 @@ const AddPost = () => {
         })
         .finally(() => {
           setInputs({});
-          setModalOpen(false); 
+          setModalOpen(false);
           setActive(false)
           window.location.replace("/dashboard");
         });
@@ -69,7 +69,7 @@ const AddPost = () => {
   };
 
   const handleChange = (e) => {
-    if (e.target.name == "price") { 
+    if (e.target.name == "price") {
       // Allow digits and one dot
       const numericValue = e.target.value.replace(/[^0-9.]/g, '');
       // Ensure only one dot is allowed
@@ -91,30 +91,33 @@ const AddPost = () => {
 
   const handleFirstSelectChange = (event) => {
     const selectedValue = event.target.value;
-    setFirstSelectValue(selectedValue); 
+    setFirstSelectValue(selectedValue);
   };
 
- 
+
 
 
 
   const handleImgChange = (url) => {
-    if (url) { 
-      setImgs(url); 
+    if (url) {
+      setImgs(url);
     }
   }
 
 
 
- 
 
+
+  const handleClick = () => {
+    router.push('/addBanner');
+  };
 
 
 
 
   return (
     <div>
-     
+
       <button
         onClick={() => setModalOpen(true)}
         className="text-white p-3 cursor-pointer"
@@ -123,38 +126,39 @@ const AddPost = () => {
         Add New Item
       </button>
 
-      {/* <button
-        onClick={() => push("/reservation")}
+      <button onClick={handleClick}
         className="text-white p-3 cursor-pointer"
         style={{ marginLeft: "1em", background: "#c01907" }}
       >
-        View Orders
-      </button> */}
+        Add New Banner
+      </button>
+
+ 
 
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
- 
-          <form className="w-full mt-3" onSubmit={handleSubmit}>
 
-            <input
-              type="text"
-              placeholder="Title"
-              name="title"
-              className="w-full p-2"
-              value={inputs.title || ""}
-              onChange={handleChange}
-              required
-            />
+        <form className="w-full mt-3" onSubmit={handleSubmit}>
 
-            <textarea
-              placeholder="Description"
-              name="description"
-              className="w-full p-2 my-3"
-              value={inputs.description || ""}
-              onChange={handleChange}
-              required
-            />
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            className="w-full p-2"
+            value={inputs.title || ""}
+            onChange={handleChange}
+            required
+          />
 
-            {/* <input
+          <textarea
+            placeholder="Description"
+            name="description"
+            className="w-full p-2 my-3"
+            value={inputs.description || ""}
+            onChange={handleChange}
+            required
+          />
+
+          {/* <input
               type="text"
               placeholder="Price"
               name="price"
@@ -166,47 +170,47 @@ const AddPost = () => {
 
 
 
-            <select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
-              <option value="0" selected>--Choose Category--</option>
-              <option value="Birthday boy cake">Birthday boy cake</option>
-              <option value="Birthday girl cake">Birthday girl cake</option>
-              <option value="Baptism cake">Baptism cake</option> 
-              <option value="Communion cake">Communion cake</option> 
-              <option value="Ice cream">Ice cream</option> 
-              <option value="Event birthday">Event birthday</option> 
-              <option value="Event baptism">Event baptism</option> 
-              <option value="Event wedding">Event wedding</option> 
-            </select>
+          <select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
+            <option value="0" selected>--Choose Category--</option>
+            <option value="Birthday boy cake">Birthday boy cake</option>
+            <option value="Birthday girl cake">Birthday girl cake</option>
+            <option value="Baptism cake">Baptism cake</option>
+            <option value="Communion cake">Communion cake</option>
+            <option value="Ice cream">Ice cream</option>
+            <option value="Event birthday">Event birthday</option>
+            <option value="Event baptism">Event baptism</option>
+            <option value="Event wedding">Event wedding</option>
+          </select>
 
-            <br />
-
- 
-
-
-            <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16'  />
-            <p style={{color:'red'}}>Note: images should be no more 1MB and size of 600 * 600 px</p>
-
-
-            <style
-  dangerouslySetInnerHTML={{
-    __html:
-      "\n.uploadcare--widget__button_type_open { \n    background-color: #c01907 !important;\n}\n"
-  }}
-/> 
-
-<style
-  dangerouslySetInnerHTML={{
-    __html:
-      "   \n\n.uploadcare--button_size_big { \n    background-color: #c01907 !important;\n}\n"
-  }}
-/>
+          <br />
 
 
 
-            <button type="submit" className="px-5 py-2 mt-3" style={{ background: "#c01907" }} disabled={active}>
-              Submit
-            </button>
-          </form> 
+
+          <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
+          <p style={{ color: 'red' }}>Note: images should be no more 1MB and size of 600 * 600 px</p>
+
+
+          <style
+            dangerouslySetInnerHTML={{
+              __html:
+                "\n.uploadcare--widget__button_type_open { \n    background-color: #c01907 !important;\n}\n"
+            }}
+          />
+
+          <style
+            dangerouslySetInnerHTML={{
+              __html:
+                "   \n\n.uploadcare--button_size_big { \n    background-color: #c01907 !important;\n}\n"
+            }}
+          />
+
+
+
+          <button type="submit" className="px-5 py-2 mt-3" style={{ background: "#c01907" }} disabled={active}>
+            Submit
+          </button>
+        </form>
       </Modal>
     </div>
   );
