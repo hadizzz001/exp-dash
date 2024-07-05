@@ -31,7 +31,7 @@ export const PATCH = async (request, {params}) => {
         const {img} = body; 
         const {id} = params;
 
-        const updatePost = await prisma.under.update({
+        const updatePost = await prisma.deal.update({
             where: {
                 id
             },

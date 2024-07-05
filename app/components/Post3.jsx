@@ -35,12 +35,6 @@ const Post = ({ post }) => {
 
   };
 
-  const handleChange = (e) => { 
-    const name = e.target.name;
-    const value = e.target.value;
-    setPostToEdit((prevState) => ({ ...prevState, [name]: value }));
-  };
-
  
 
 
@@ -79,10 +73,7 @@ const Post = ({ post }) => {
 
 
   return (
-    <div className="bg-slate-200 p-3 min-h-full min-w-full" key={post.id}>
-      <h1 className="text-2xl font-bold">Title : {post.title}</h1>  
-      <p style={{ width: "150px", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{post.description}</p><br />
-
+    <div className="bg-slate-200 p-3 min-h-full min-w-full" key={post.id}> 
       <img src={post.img[0]} width={50} />
 
       <div className="pt-5">
@@ -99,26 +90,7 @@ const Post = ({ post }) => {
 
 
           <form className="w-full mt-3" onSubmit={handleEditSubmit}>
-
-            <input
-              type="text"
-              placeholder="Title"
-              name="title"
-              className="w-full p-2"
-              value={postToEdit.title || ""}
-              onChange={handleChange}
-              required
-            />
-
-            <textarea
-              placeholder="Description"
-              name="description"
-              className="w-full p-2 my-3"
-              value={postToEdit.description || ""}
-              onChange={handleChange}
-              required
-            />
-
+ 
              
             <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
             <p style={{color:'red'}}>Note: images should be no more 1MB and size of 300 * 500 px</p>
