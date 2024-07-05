@@ -112,6 +112,13 @@ const AddPost = () => {
     router.push('/addBanner');
   };
 
+  const handleClick1 = () => {
+    router.push('/addUnder');
+  };
+  const handleClick2 = () => {
+    router.push('/addDeal');
+  };
+
 
 
 
@@ -130,7 +137,23 @@ const AddPost = () => {
         className="text-white p-3 cursor-pointer"
         style={{ marginLeft: "1em", background: "#c01907" }}
       >
-        Add New Banner
+        Banner Access
+      </button>
+
+      <button
+        onClick={handleClick1}
+        className="text-white p-3 cursor-pointer"
+        style={{ marginLeft: "1em", background: "#c01907" }}
+      >
+        Under Banner Access
+      </button>
+
+      <button
+        onClick={handleClick2}
+        className="text-white p-3 cursor-pointer"
+        style={{ marginLeft: "1em", background: "#c01907" }}
+      >
+        Deal of the Day 
       </button>
 
  

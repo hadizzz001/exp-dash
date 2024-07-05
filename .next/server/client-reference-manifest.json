@@ -56,6 +56,38 @@
         "async": false
       }
     },
+    "(app-client)/./app/addDeal/layout.tsx": {
+      "*": {
+        "id": "(sc_client)/./app/addDeal/layout.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/link.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./app/addDeal/page.tsx": {
+      "*": {
+        "id": "(sc_client)/./app/addDeal/page.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./app/components/Post3.jsx": {
+      "*": {
+        "id": "(sc_client)/./app/components/Post3.jsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
     "(app-client)/./app/components/AddPost.jsx": {
       "*": {
         "id": "(sc_client)/./app/components/AddPost.jsx",
@@ -88,41 +120,9 @@
         "async": false
       }
     },
-    "(app-client)/./node_modules/next/dist/client/link.js": {
+    "(app-client)/./app/page.tsx": {
       "*": {
-        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./app/addBanner/layout.tsx": {
-      "*": {
-        "id": "(sc_client)/./app/addBanner/layout.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./app/addBanner/page.tsx": {
-      "*": {
-        "id": "(sc_client)/./app/addBanner/page.tsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./app/components/AddBanner.jsx": {
-      "*": {
-        "id": "(sc_client)/./app/components/AddBanner.jsx",
-        "name": "*",
-        "chunks": [],
-        "async": false
-      }
-    },
-    "(app-client)/./app/components/Post1.jsx": {
-      "*": {
-        "id": "(sc_client)/./app/components/Post1.jsx",
+        "id": "(sc_client)/./app/page.tsx",
         "name": "*",
         "chunks": [],
         "async": false
@@ -291,6 +291,46 @@
       ],
       "async": false
     },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\addDeal\\layout.tsx": {
+      "id": "(app-client)/./app/addDeal/layout.tsx",
+      "name": "*",
+      "chunks": [
+        "app/addDeal/layout:static/chunks/app/addDeal/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\node_modules\\next\\dist\\client\\link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/dashboard/layout:static/chunks/app/dashboard/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\node_modules\\next\\dist\\esm\\client\\link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/dashboard/layout:static/chunks/app/dashboard/layout.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\addDeal\\page.tsx": {
+      "id": "(app-client)/./app/addDeal/page.tsx",
+      "name": "*",
+      "chunks": [
+        "app/addDeal/page:static/chunks/app/addDeal/page.js"
+      ],
+      "async": false
+    },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\components\\Post3.jsx": {
+      "id": "(app-client)/./app/components/Post3.jsx",
+      "name": "*",
+      "chunks": [
+        "app/addDeal/page:static/chunks/app/addDeal/page.js"
+      ],
+      "async": false
+    },
     "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\components\\AddPost.jsx": {
       "id": "(app-client)/./app/components/AddPost.jsx",
       "name": "*",
@@ -323,61 +363,21 @@
       ],
       "async": false
     },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\node_modules\\next\\dist\\client\\link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\page.tsx": {
+      "id": "(app-client)/./app/page.tsx",
       "name": "*",
       "chunks": [
-        "app/addBanner/layout:static/chunks/app/addBanner/layout.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\node_modules\\next\\dist\\esm\\client\\link.js": {
-      "id": "(app-client)/./node_modules/next/dist/client/link.js",
-      "name": "*",
-      "chunks": [
-        "app/addBanner/layout:static/chunks/app/addBanner/layout.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\addBanner\\layout.tsx": {
-      "id": "(app-client)/./app/addBanner/layout.tsx",
-      "name": "*",
-      "chunks": [
-        "app/addBanner/layout:static/chunks/app/addBanner/layout.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\addBanner\\page.tsx": {
-      "id": "(app-client)/./app/addBanner/page.tsx",
-      "name": "*",
-      "chunks": [
-        "app/addBanner/page:static/chunks/app/addBanner/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\components\\AddBanner.jsx": {
-      "id": "(app-client)/./app/components/AddBanner.jsx",
-      "name": "*",
-      "chunks": [
-        "app/addBanner/page:static/chunks/app/addBanner/page.js"
-      ],
-      "async": false
-    },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\components\\Post1.jsx": {
-      "id": "(app-client)/./app/components/Post1.jsx",
-      "name": "*",
-      "chunks": [
-        "app/addBanner/page:static/chunks/app/addBanner/page.js"
+        "app/page:static/chunks/app/page.js"
       ],
       "async": false
     }
   },
   "entryCSSFiles": {
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\dashboard\\page": {
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\addDeal\\layout": {
       "modules": [],
       "files": []
     },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\dashboard\\layout": {
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\addDeal\\page": {
       "modules": [],
       "files": []
     },
@@ -390,11 +390,15 @@
         "static/css/app/layout.css"
       ]
     },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\addBanner\\layout": {
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\dashboard\\page": {
       "modules": [],
       "files": []
     },
-    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\addBanner\\page": {
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\dashboard\\layout": {
+      "modules": [],
+      "files": []
+    },
+    "C:\\Users\\abc\\Desktop\\Hadi\\My Bussiness\\Si bon\\web - dash\\app\\page": {
       "modules": [],
       "files": []
     }

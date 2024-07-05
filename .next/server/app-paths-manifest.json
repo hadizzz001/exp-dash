@@ -1,7 +1,7 @@
 {
-  "/addBanner/page": "app/addBanner/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/addDeal/page": "app/addDeal/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/api/banner/route": "app/api/banner/route.js",
-  "/api/banner/[id]/route": "app/api/banner/[id]/route.js",
+  "/api/deal/route": "app/api/deal/route.js",
   "/api/auth/me/route": "app/api/auth/me/route.js"
 }

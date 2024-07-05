@@ -17,10 +17,7 @@ export const GET = async (req: Request, res: NextResponse) => {
         console.time('start')
         await main();
         const posts = await prisma.banner.findMany();
-        console.timeEnd('start') 
-        
-        
-
+        console.timeEnd('start')  
         return NextResponse.json({ message: "Success", posts }, { status: 200 });
 
     }
