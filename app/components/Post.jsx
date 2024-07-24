@@ -11,10 +11,7 @@ const Post = ({ post }) => {
 
   const [openModalEdit, setOpenModalEdit] = useState(false);
   const [postToEdit, setPostToEdit] = useState(post);
-  const [active, setActive] = useState(false)
-  const [active1, setActive1] = useState(false)
-  const [firstSelectValue, setFirstSelectValue] = useState(''); 
-  const [value1, setValue1] = useState('');
+  const [active, setActive] = useState(false)  
   const [imgs, setImgs] = useState([''])
 
   const [openModalDelete, setOpenModalDelete] = useState(false);
@@ -75,20 +72,7 @@ const Post = ({ post }) => {
       setImgs(url);
     }
   }
-
-
-  const handleFirstSelectChange = (event) => {
-    const selectedValue = event.target.value;
-    setFirstSelectValue(selectedValue);
-    setActive1(true) 
-  };
-
  
-  useEffect(() => { 
-    if (firstSelectValue){ 
-      setPostToEdit((prevState) => ({ ...prevState, category: "" + firstSelectValue }));
-    } 
-  }, [firstSelectValue])
 
 
  
@@ -119,9 +103,7 @@ const Post = ({ post }) => {
 
   return (
     <div className="bg-slate-200 p-3 min-h-full min-w-full" key={post.id}>
-      <h1 className="text-2xl font-bold">Title : {post.title}</h1>
-      <b>Category : {post.category}</b><br /> 
-      <b>Price($) : {post.price}</b><br />
+      <h1 className="text-2xl font-bold">Title : {post.title}</h1> 
       <p style={{ width: "150px", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{post.description}</p><br />
 
       <img src={post.img[0]} width={50} />
@@ -159,38 +141,14 @@ const Post = ({ post }) => {
               onChange={handleChange}
               required
             />
-
-            {/* <input
-              type="text"
-              placeholder="Price"
-              name="price"
-              className="w-full p-2 my-3"
-              value={postToEdit.price || value1}
-              onChange={handleChange}
-              required
-            /> */}
-
-
-
-<select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
-<option value="0" selected>--Choose Category--</option>
-              <option value="Birthday boy cake">Birthday boy cake</option>
-              <option value="Birthday girl cake">Birthday girl cake</option>
-              <option value="Baptism cake">Baptism cake</option> 
-              <option value="Communion cake">Communion cake</option> 
-              <option value="Ice cream">Ice cream</option> 
-              <option value="Event birthday">Event birthday</option> 
-              <option value="Event baptism">Event baptism</option> 
-              <option value="Event wedding">Event wedding</option> 
-            </select>
-
+ 
             <br />
 
 
  
 
             <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
-            <p style={{color:'red'}}>Note: images should be no more 1MB and size of 600 * 600 px</p>
+            <p style={{color:'red'}}>Note: images should be no more 1MB and size of 400 * 200 px</p>
 
             <button type="submit" className="px-5 py-2 mt-3" style={{ background: "#c01907" }} disabled={active}>
               Submit

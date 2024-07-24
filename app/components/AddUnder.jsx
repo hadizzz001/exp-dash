@@ -11,12 +11,9 @@ import Dropzone from './Dropzone'
 const AddPost = () => {
 
   const router = useRouter();
-  const { push } = useRouter();
   const [modalOpen, setModalOpen] = useState(false);
   const [inputs, setInputs] = useState({});
   const [active, setActive] = useState(false)
-  const [firstSelectValue, setFirstSelectValue] = useState('');
-  const [value1, setValue1] = useState('');
   const [imgs, setImgs] = useState([''])
 
 
@@ -31,7 +28,7 @@ const AddPost = () => {
 
 
   useEffect(() => {
-    setInputs((prevState) => ({ ...prevState,  img: imgs }));
+    setInputs((prevState) => ({ ...prevState, img: imgs }));
   }, [imgs])
 
 
@@ -43,8 +40,7 @@ const AddPost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
- 
-     if (imgs.includes("")) {
+    if (imgs.includes("")) {
       alert("Please select item image");
     }
     else {
@@ -66,8 +62,7 @@ const AddPost = () => {
     }
   };
 
-  const handleChange = (e) => { 
-
+  const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
     setInputs((prevState) => ({ ...prevState, [name]: value, img: localStorage.getItem("sharedValue") }));
@@ -77,8 +72,6 @@ const AddPost = () => {
 
 
 
- 
-
 
 
   const handleImgChange = (url) => {
@@ -87,21 +80,21 @@ const AddPost = () => {
     }
   }
 
- 
+
+
 
 
   return (
     <div>
 
-<button
+      <button
         onClick={() => setModalOpen(true)}
         className="text-white p-3 cursor-pointer"
         style={{ background: "#c01907" }}
       >
-        Add Banner
+        Add
       </button>
 
- 
 
       <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
 
@@ -117,6 +110,16 @@ const AddPost = () => {
             required
           />
 
+          <input
+            type="text"
+            placeholder="Sub-title"
+            name="sub"
+            className="w-full p-2 my-3"
+            value={inputs.sub || ""}
+            onChange={handleChange}
+            required
+          />
+
           <textarea
             placeholder="Description"
             name="description"
@@ -126,13 +129,9 @@ const AddPost = () => {
             required
           />
 
- 
-
-
-
 
           <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
-          <p style={{ color: 'red' }}>Note: images should be no more 1MB and size of 600 * 600 px</p>
+          <p style={{ color: 'red' }}>Note: images should be no more 1MB and size of 400 * 200 px</p>
 
 
           <style

@@ -1,7 +1,6 @@
 {
-  "/addDeal/page": "app/addDeal/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/api/deal/route": "app/api/deal/route.js",
-  "/api/deal/[id]/route": "app/api/deal/[id]/route.js",
+  "/api/posts/route": "app/api/posts/route.js",
+  "/addTitle/page": "app/addTitle/page.js",
   "/api/auth/me/route": "app/api/auth/me/route.js"
 }

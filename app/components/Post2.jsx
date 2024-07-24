@@ -11,9 +11,10 @@ const Post = ({ post }) => {
 
   const [openModalEdit, setOpenModalEdit] = useState(false);
   const [postToEdit, setPostToEdit] = useState(post);
-  const [active, setActive] = useState(false) 
+  const [active, setActive] = useState(false)  
   const [imgs, setImgs] = useState([''])
- 
+
+  const [openModalDelete, setOpenModalDelete] = useState(false);
 
   const handleEditSubmit = (e) => {
     e.preventDefault(); 
@@ -41,7 +42,20 @@ const Post = ({ post }) => {
     setPostToEdit((prevState) => ({ ...prevState, [name]: value }));
   };
 
- 
+  const handleDeletePost = (id) => {
+    axios
+      .delete(`/api/under/${id}`)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setOpenModalEdit(false);
+        window.location.replace("/addUnder");
+      });
+  }
 
 
   const handleImgChange = (url) => {
@@ -49,9 +63,9 @@ const Post = ({ post }) => {
       setImgs(url);
     }
   }
-
-
  
+
+
  
 
   useEffect(() => { 
@@ -80,7 +94,7 @@ const Post = ({ post }) => {
 
   return (
     <div className="bg-slate-200 p-3 min-h-full min-w-full" key={post.id}>
-      <h1 className="text-2xl font-bold">Title : {post.title}</h1>  
+      <h1 className="text-2xl font-bold">Title : {post.title}</h1> 
       <p style={{ width: "150px", overflow: "hidden", whiteSpace: "nowrap", textOverflow: "ellipsis" }}>{post.description}</p><br />
 
       <img src={post.img[0]} width={50} />
@@ -110,7 +124,17 @@ const Post = ({ post }) => {
               required
             />
 
-            <textarea
+            <input
+              type="text"
+              placeholder="Sub-title"
+              name="sub"
+              className="w-full p-2 my-3"
+              value={postToEdit.sub || ""}
+              onChange={handleChange}
+              required
+            />
+ <br />
+<textarea
               placeholder="Description"
               name="description"
               className="w-full p-2 my-3"
@@ -118,10 +142,14 @@ const Post = ({ post }) => {
               onChange={handleChange}
               required
             />
+ 
+            <br />
 
-             
+
+ 
+
             <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
-            <p style={{color:'red'}}>Note: images should be no more 1MB and size of 1000 * 500 px</p>
+            <p style={{color:'red'}}>Note: images should be no more 1MB and size of 400 * 200 px</p>
 
             <button type="submit" className="px-5 py-2 mt-3" style={{ background: "#c01907" }} disabled={active}>
               Submit
@@ -129,7 +157,28 @@ const Post = ({ post }) => {
           </form>
         </Modal>
 
-        
+        <button onClick={() => setOpenModalDelete(true)} className="text-red-700 mr-3">Delete</button>
+
+        <Modal modalOpen={openModalDelete} setModalOpen={setOpenModalDelete}>
+          <h1 className="text-2xl pb-3">
+            Are you sure, You want to delete this post?
+          </h1>
+
+          <div>
+            <button
+              onClick={() => handleDeletePost(post.id)}
+              className="text-blue-700 font-bold mr-5"
+            >
+              YES
+            </button>
+            <button
+              onClick={() => setOpenModalDelete(false)}
+              className="text-red-700 font-bold mr-5"
+            >
+              No
+            </button>
+          </div>
+        </Modal>
 
 
 

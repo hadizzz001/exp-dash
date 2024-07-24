@@ -15,7 +15,6 @@ model Post {
   title String
   description String
   img String[]
-  category String 
 }
 
 model Banner {
@@ -37,12 +36,13 @@ model Order {
  model Under {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   title String
+  sub String
   description String
   img String[] 
 }
 
 
-model Deal {
+model Title {
   id String @id @default(auto()) @map("_id") @db.ObjectId 
-  img String[] 
+  title String
 }

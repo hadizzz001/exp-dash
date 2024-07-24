@@ -94,7 +94,7 @@ const AddPost = () => {
 
 
           <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
-          <p style={{ color: 'red' }}>Note: images should be no more 1MB and size of 1000 * 500 px</p>
+          <p style={{ color: 'red' }}>Note: images should be no more 1MB and size of 1200 * 500 px</p>
 
 
           <style

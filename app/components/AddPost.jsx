@@ -10,13 +10,10 @@ import Dropzone from './Dropzone'
 
 const AddPost = () => {
 
-  const router = useRouter();
-  const { push } = useRouter();
+  const router = useRouter(); 
   const [modalOpen, setModalOpen] = useState(false);
   const [inputs, setInputs] = useState({});
-  const [active, setActive] = useState(false)
-  const [firstSelectValue, setFirstSelectValue] = useState('');
-  const [value1, setValue1] = useState('');
+  const [active, setActive] = useState(false) 
   const [imgs, setImgs] = useState([''])
 
 
@@ -31,8 +28,8 @@ const AddPost = () => {
 
 
   useEffect(() => {
-    setInputs((prevState) => ({ ...prevState, category: "" + firstSelectValue, img: imgs }));
-  }, [firstSelectValue, imgs])
+    setInputs((prevState) => ({ ...prevState,   img: imgs }));
+  }, [imgs])
 
 
 
@@ -43,10 +40,7 @@ const AddPost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (e.target.category.value == "0") {
-      alert("Please select a category");
-    }
-    else if (imgs.includes("")) {
+ if (imgs.includes("")) {
       alert("Please select item image");
     }
     else {
@@ -116,7 +110,7 @@ const AddPost = () => {
     router.push('/addUnder');
   };
   const handleClick2 = () => {
-    router.push('/addDeal');
+    router.push('/addTitle');
   };
 
 
@@ -130,14 +124,14 @@ const AddPost = () => {
         className="text-white p-3 cursor-pointer"
         style={{ background: "#c01907" }}
       >
-        Add New Item
+        Add New Art Exhibition
       </button>
 
       <button onClick={handleClick}
         className="text-white p-3 cursor-pointer"
         style={{ marginLeft: "1em", background: "#c01907" }}
       >
-        Banner Access
+        Add Home Banner 
       </button>
 
       <button
@@ -145,7 +139,7 @@ const AddPost = () => {
         className="text-white p-3 cursor-pointer"
         style={{ marginLeft: "1em", background: "#c01907" }}
       >
-        Under Banner Access
+        Add Under Home Banner
       </button>
 
       <button
@@ -153,7 +147,7 @@ const AddPost = () => {
         className="text-white p-3 cursor-pointer"
         style={{ marginLeft: "1em", background: "#c01907" }}
       >
-        Deal of the Day 
+        Add Home Title
       </button>
 
  
@@ -180,38 +174,10 @@ const AddPost = () => {
             onChange={handleChange}
             required
           />
-
-          {/* <input
-              type="text"
-              placeholder="Price"
-              name="price"
-              className="w-full p-2 my-3"
-              value={value1}
-              onChange={handleChange}
-              required
-            /> */}
-
-
-
-          <select name="category" value={firstSelectValue} onChange={handleFirstSelectChange} style={{ width: "100%", height: "40px" }}  >
-            <option value="0" selected>--Choose Category--</option>
-            <option value="Birthday boy cake">Birthday boy cake</option>
-            <option value="Birthday girl cake">Birthday girl cake</option>
-            <option value="Baptism cake">Baptism cake</option>
-            <option value="Communion cake">Communion cake</option>
-            <option value="Ice cream">Ice cream</option>
-            <option value="Event birthday">Event birthday</option>
-            <option value="Event baptism">Event baptism</option>
-            <option value="Event wedding">Event wedding</option>
-          </select>
-
-          <br />
-
-
-
+  
 
           <Dropzone HandleImagesChange={handleImgChange} className='mt-10 border border-neutral-200 p-16' />
-          <p style={{ color: 'red' }}>Note: images should be no more 1MB and size of 600 * 600 px</p>
+          <p style={{ color: 'red' }}>Note: images should be no more 1MB and size of 400 * 200 px</p>
 
 
           <style

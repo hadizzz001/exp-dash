@@ -47,7 +47,7 @@ export async function fetchTemp5() {
 
 
 export async function fetchTemp6() { 
-    const response = await fetch('/api/deal', { next: { revalidate: 0 } });
+    const response = await fetch('/api/title', { next: { revalidate: 0 } });
     const result = await response.json();  
     return result.posts; 
 }

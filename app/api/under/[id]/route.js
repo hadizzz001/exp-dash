@@ -28,14 +28,14 @@ export const GET = async (request, { params }) => {
 export const PATCH = async (request, {params}) => {
     try {
         const body = await request.json();
-        const {title, description, img} = body; 
+        const {title,sub, description, img} = body; 
         const {id} = params;
 
         const updatePost = await prisma.under.update({
             where: {
                 id
             },
-            data: {title, description, img}
+            data: {title,sub, description, img}
         })
 
         if(!updatePost) {
